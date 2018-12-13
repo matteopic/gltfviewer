@@ -4,7 +4,6 @@ var viewer,
 
 function initCesium(){
 	Cesium.BingMapsApi.defaultKey = "Ag-6WHiJUeX5dm4qedvjgqzGcB-mgrZe1KtjnNz-8gwzIP_8PUu9kVZUKXhuwRsX";
-
 	var globe = new Cesium.Globe();
 	globe.baseColor = Cesium.Color.WHITE;
 
@@ -155,3 +154,4 @@ function showGlTF(uri){
 }
 
 initDropzone();
+document.getElementById("cesiumver").innerText = "v"+ Cesium.VERSION;
