@@ -134,6 +134,7 @@ function showGlTF(uri){
 	    	var boundingSphere = new Cesium.BoundingSphere();
 			var state = viewer.dataSourceDisplay.getBoundingSphere(entity, false, boundingSphere);
 			if (state === Cesium.BoundingSphereState.DONE) {
+				loading.style.display = 'none';
 				// Set camera
 				viewer.camera.moveBackward(2);
 
@@ -153,5 +154,18 @@ function showGlTF(uri){
 	checkOnLoad(entity);
 }
 
+function handleURLChange(evt){
+	var input = evt.target;
+	var url = input.value.trim();
+	var re = /(https?|file):\/\/.+/g;
+	if(url.match(re)){
+		loading.style.display = 'block';
+		document.getElementById("home").style.display = 'none';
+		showGlTF(url);
+	}
+}
+
 initDropzone();
 document.getElementById("cesiumver").innerText = "v"+ Cesium.VERSION;
+document.getElementById("model_url").oninput = handleURLChange;
+loading = document.getElementById('loading');

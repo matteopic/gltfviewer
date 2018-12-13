@@ -88,6 +88,10 @@
 	#credits a{
 		color: white;
 	}
+
+	#loading{display: none; text-align: center; }
+	.enterurl{margin-top: 1em; color:#555; font-size: 2em;}
+	.enterurl input{ width: 630px; padding: 1em;}
 	</style>
 </head>
 <body>
@@ -96,12 +100,19 @@
 		This is a <a href="https://github.com/KhronosGroup/glTF" target="_blank">glTF</a> viewer. It uses <a href="https://cesiumjs.org" target="_blank">Cesium</a> <span id="cesiumver"></span> for rendering.<br/> 
 		Files are read via HTML5 File API, so it's fast. No uploads to a server. It supports glTF 2.0.<br/>
 	</div>
+
+	<div class="enterurl">
+		<div>Enter model URL</div>
+		<input type="text" id="model_url">
+		<div>or</div>
+	</div>
 	<div class="dragndrop">
 		<div>Drop a .gltf/.glb file or click to select one</div>
 		<i class="fa fa-upload fa-3x"></i>
 	</div>
 </div>
 <div id="cesiumContainer">
+	<h1 id="loading">Loading...</h1>
 	<div id="instructions">
 		<div class="title">Keyboard Commands:</div>
 		<div class="commands">
