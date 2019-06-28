@@ -14,10 +14,10 @@ It uses [Cesium](https://www.cesiumjs.org) for rendering. Files are read via HTM
 git clone https://github.com/virtualgis/gltfviewer
 cd gltfviewer
 npm install
-python -m http.server
+npm start
 ```
 
-This assumes Python 3.x is installed to launch the local web server.
+Then point a browser to http://localhost/
 
 ## Known Limitations
 
